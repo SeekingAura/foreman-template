@@ -27,13 +27,14 @@ ROOT_MOUNT_DIR = Path(
     "mount",
 )
 
-# apps requires only root dir
-APPS_CONTAINER = (
+# folders list
+MOUNT_LIST = (
     "db",
     "redis-tasks",
+    "foreman_gems",
 )
 
-for app_i in APPS_CONTAINER:
+for app_i in MOUNT_LIST:
     Path(ROOT_MOUNT_DIR, app_i).mkdir(
         parents=True,
         exist_ok=True,
